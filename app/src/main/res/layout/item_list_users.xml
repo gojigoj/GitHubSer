@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CustomViewBackgroundItem"
+    android:layout_marginHorizontal="@dimen/margin_medium"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:padding="@dimen/padding_medium">
+
+    <ImageView
+        android:id="@+id/iv_profile_picture"
+        android:layout_width="@dimen/profile_photo_normal"
+        android:layout_height="@dimen/profile_photo_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/iv_next"
+        style="@style/CustomBtnNext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        style="@style/TextContentFullWidth.Space.SingleLine"
+        android:fontFamily="@font/raleway_bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
+        app:layout_constraintEnd_toStartOf="@id/iv_next"
+        app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
+        app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
+        tools:text="gojigoj" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

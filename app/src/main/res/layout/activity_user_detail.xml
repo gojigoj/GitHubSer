@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.userdetail.view.UserDetailActivity">
+
+    <ImageView
+        android:id="@+id/iv_profile_picture"
+        android:layout_width="@dimen/profile_photo_large"
+        android:layout_height="@dimen/profile_photo_large"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_repo_num"
+        style="@style/TextContentFullWidth.Num"
+        app:layout_constraintBottom_toTopOf="@id/tv_repo_title"
+        app:layout_constraintEnd_toEndOf="@id/tv_repo_title"
+        app:layout_constraintStart_toStartOf="@id/tv_repo_title"
+        app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
+        tools:text="9999" />
+
+    <TextView
+        android:id="@+id/tv_repo_title"
+        style="@style/TextContentWrapContent.SmallTitle"
+        android:text="@string/repository"
+        app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
+        app:layout_constraintEnd_toStartOf="@id/tv_following_title"
+        app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
+        app:layout_constraintTop_toBottomOf="@id/tv_repo_num" />
+
+    <TextView
+        android:id="@+id/tv_following_num"
+        style="@style/TextContentFullWidth.Num"
+        app:layout_constraintBottom_toBottomOf="@id/tv_repo_num"
+        app:layout_constraintEnd_toEndOf="@id/tv_following_title"
+        app:layout_constraintStart_toStartOf="@id/tv_following_title"
+        app:layout_constraintTop_toTopOf="@id/tv_repo_num"
+        tools:text="9999" />
+
+    <TextView
+        android:id="@+id/tv_following_title"
+        style="@style/TextContentWrapContent.SmallTitle"
+        android:text="@string/following"
+        app:layout_constraintBottom_toBottomOf="@id/tv_repo_title"
+        app:layout_constraintEnd_toStartOf="@id/tv_followers_title"
+        app:layout_constraintStart_toEndOf="@id/tv_repo_title"
+        app:layout_constraintTop_toTopOf="@id/tv_repo_title" />
+
+    <TextView
+        android:id="@+id/tv_followers_num"
+        style="@style/TextContentFullWidth.Num"
+        app:layout_constraintBottom_toBottomOf="@id/tv_following_num"
+        app:layout_constraintEnd_toEndOf="@id/tv_followers_title"
+        app:layout_constraintStart_toStartOf="@id/tv_followers_title"
+        app:layout_constraintTop_toTopOf="@id/tv_following_num"
+        tools:text="9999" />
+
+    <TextView
+        android:id="@+id/tv_followers_title"
+        style="@style/TextContentWrapContent.SmallTitle"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="@string/followers"
+        app:layout_constraintBottom_toBottomOf="@id/tv_following_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_following_title"
+        app:layout_constraintTop_toTopOf="@id/tv_following_title" />
+
+    <ImageView
+        android:id="@+id/iv_ic_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile_picture"
+        app:srcCompat="@drawable/ic_person" />
+
+    <TextView
+        android:id="@+id/tv_full_name"
+        style="@style/TextContentFullWidth.Space.SingleLine"
+        android:fontFamily="@font/raleway_medium"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ic_people"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_ic_people"
+        app:layout_constraintTop_toTopOf="@id/iv_ic_people"
+        tools:text="Ghazi Ahmad Fadhlullah" />
+
+    <ImageView
+        android:id="@+id/iv_ic_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="@id/iv_ic_people"
+        app:layout_constraintStart_toStartOf="@id/iv_ic_people"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_people"
+        app:srcCompat="@drawable/ic_company" />
+
+    <TextView
+        android:id="@+id/tv_company"
+        style="@style/TextContentFullWidth.Space.SingleLine"
+        android:layout_marginStart="0dp"
+        android:fontFamily="@font/raleway_medium"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ic_company"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_full_name"
+        app:layout_constraintTop_toTopOf="@id/iv_ic_company"
+        tools:text="gameQoo Cloud Gaming" />
+
+    <ImageView
+        android:id="@+id/iv_ic_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="@id/iv_ic_people"
+        app:layout_constraintStart_toStartOf="@id/iv_ic_people"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_company"
+        app:srcCompat="@drawable/ic_location" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        style="@style/TextContentFullWidth.Space.SingleLine"
+        android:layout_marginStart="0dp"
+        android:fontFamily="@font/raleway_medium"
+        app:layout_constraintBottom_toBottomOf="@id/iv_ic_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_full_name"
+        app:layout_constraintTop_toTopOf="@id/iv_ic_location"
+        tools:text="Jakarta, Indonesia" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save_user"
+        style="@style/CustomButton"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_ic_location" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_follower"
+        style="@style/CustomTab"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_save_user" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_follower"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_follower" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
