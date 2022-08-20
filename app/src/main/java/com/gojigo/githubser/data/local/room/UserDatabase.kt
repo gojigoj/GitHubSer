@@ -23,5 +23,5 @@ abstract class UserDatabase : RoomDatabase() {
             }
     }
 
-    abstract fun savedUsedDao(): SavedUserDao
+    abstract fun savedUserDao(): SavedUserDao
 }

@@ -4,9 +4,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gojigo.githubser.data.Repository
 import com.gojigo.githubser.data.local.entity.UserEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserDetailViewModel(private val repository: Repository) : ViewModel() {
+@HiltViewModel
+class UserDetailViewModel @Inject constructor(
+    private val repository: Repository
+) : ViewModel() {
 
     fun getUserDetail(userName: String) = repository.getUserDetail(userName)
 

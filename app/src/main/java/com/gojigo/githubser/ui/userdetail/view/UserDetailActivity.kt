@@ -19,16 +19,14 @@ import com.gojigo.githubser.ui.userdetail.adapter.SectionsPagerAdapter
 import com.gojigo.githubser.util.*
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserDetailBinding
-    private val viewModel: UserDetailViewModel by viewModels { ViewModelFactory.getInstance(this) }
-    private val themeViewModel: ThemeViewModel by viewModels {
-        ThemeViewModelFactory.getInstance(
-            this
-        )
-    }
+    private val viewModel: UserDetailViewModel by viewModels()
+    private val themeViewModel: ThemeViewModel by viewModels()
 
     private var isSaved: Boolean = false
     private var isDarkModeActive: Boolean = false
