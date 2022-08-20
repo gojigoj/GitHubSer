@@ -16,16 +16,14 @@ import com.gojigo.githubser.ui.main.adapter.UserListAdapter
 import com.gojigo.githubser.ui.saveduser.view.SavedUserActivity
 import com.gojigo.githubser.ui.userdetail.view.UserDetailActivity
 import com.gojigo.githubser.util.*
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: MainViewModel by viewModels { ViewModelFactory.getInstance(this) }
-    private val themeViewModel: ThemeViewModel by viewModels {
-        ThemeViewModelFactory.getInstance(
-            this
-        )
-    }
+    private val viewModel: MainViewModel by viewModels()
+    private val themeViewModel: ThemeViewModel by viewModels()
 
     private val usersAdapter: UserListAdapter by lazy {
         UserListAdapter { user ->

@@ -14,17 +14,15 @@ import com.gojigo.githubser.databinding.FragmentUserListBinding
 import com.gojigo.githubser.ui.saveduser.adapter.SavedUserListAdapter
 import com.gojigo.githubser.ui.userdetail.view.UserDetailActivity
 import com.gojigo.githubser.util.*
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SavedUserActivity : AppCompatActivity() {
 
     private lateinit var binding: FragmentUserListBinding
 
-    private val viewModel: SavedUserViewModel by viewModels { ViewModelFactory.getInstance(this) }
-    private val themeViewModel: ThemeViewModel by viewModels {
-        ThemeViewModelFactory.getInstance(
-            this
-        )
-    }
+    private val viewModel: SavedUserViewModel by viewModels()
+    private val themeViewModel: ThemeViewModel by viewModels()
 
     private val userSavedAdapter: SavedUserListAdapter by lazy {
         SavedUserListAdapter { user ->

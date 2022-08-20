@@ -7,8 +7,11 @@ import com.gojigo.githubser.data.local.entity.UserEntity
 import com.gojigo.githubser.data.local.room.SavedUserDao
 import com.gojigo.githubser.data.remote.ApiService
 import com.gojigo.githubser.data.response.UserDetailResponse
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Repository private constructor(
+@Singleton
+class Repository @Inject constructor(
     private val apiService: ApiService,
     private val savedUserDao: SavedUserDao
 ) {

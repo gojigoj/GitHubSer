@@ -13,21 +13,18 @@ import com.gojigo.githubser.databinding.FragmentUserListBinding
 import com.gojigo.githubser.ui.saveduser.adapter.SavedUserListAdapter
 import com.gojigo.githubser.ui.userdetail.view.UserDetailActivity
 import com.gojigo.githubser.ui.userdetail.view.UserDetailViewModel
-import com.gojigo.githubser.util.ViewModelFactory
 import com.gojigo.githubser.util.hide
 import com.gojigo.githubser.util.show
 import com.gojigo.githubser.util.showToast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserListFragment : Fragment() {
 
     private var _binding: FragmentUserListBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: UserDetailViewModel by viewModels {
-        ViewModelFactory.getInstance(
-            requireActivity()
-        )
-    }
+    private val viewModel: UserDetailViewModel by viewModels()
 
     private val listAdapter: SavedUserListAdapter by lazy {
         SavedUserListAdapter { user ->

@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide.with
 import com.gojigo.githubser.R
 
 fun View.show() {
@@ -30,7 +30,7 @@ fun SearchView.setTypeFace(context: Context) {
 }
 
 fun ImageView.setRoundImage(imageUrl: String) {
-    Glide.with(this.context)
+    GlideApp.with(this.context)
         .load(imageUrl)
         .placeholder(ContextCompat.getDrawable(this.context, R.drawable.ic_base_image))
         .error(ContextCompat.getDrawable(this.context, R.drawable.ic_broken_image))

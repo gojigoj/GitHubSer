@@ -5,11 +5,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gojigo.githubser.data.Repository
 import com.gojigo.githubser.data.local.entity.UserEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(private val repository: Repository) :
-    ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val repository: Repository
+) : ViewModel() {
 
     private val _isLoading = MutableLiveData(true)
     val isLoading get() = _isLoading
