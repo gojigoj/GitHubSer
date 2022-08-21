@@ -30,13 +30,5 @@ class SettingPreferences @Inject constructor(
         private const val THEME_SETTING = "themeSetting"
 
         private val THEME_KEY = booleanPreferencesKey(THEME_SETTING)
-
-        @Volatile
-        private var instance: SettingPreferences? = null
-
-        fun getInstance(dataStore: DataStore<Preferences>): SettingPreferences =
-            instance ?: synchronized(this) {
-                instance ?: SettingPreferences(dataStore)
-            }.also { instance = it }
     }
 }
