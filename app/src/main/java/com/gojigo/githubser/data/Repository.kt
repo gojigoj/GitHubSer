@@ -15,17 +15,6 @@ class Repository @Inject constructor(
     private val apiService: ApiService,
     private val savedUserDao: SavedUserDao
 ) {
-    companion object {
-        private val TAG = Repository::class.java.simpleName
-
-        @Volatile
-        private var instance: Repository? = null
-
-        fun getInstance(apiService: ApiService, savedUserDao: SavedUserDao): Repository =
-            instance ?: synchronized(this) {
-                instance ?: Repository(apiService, savedUserDao)
-            }.also { instance = it }
-    }
 
     fun searchUser(userName: String): LiveData<Result<List<UserEntity>>> = liveData {
         emit(Result.Loading)
@@ -88,5 +77,8 @@ class Repository @Inject constructor(
         savedUserDao.delete(user)
     }
 
+    companion object {
+        private val TAG = Repository::class.java.simpleName
+    }
 
 }
